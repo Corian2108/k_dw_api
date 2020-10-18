@@ -1,0 +1,22 @@
+.contenedor {
+    position: absolute;
+    background-color: black;
+}
+
+.objeto {
+    position: relative;
+    background-color: white;
+}
+
+#estatico {
+    width: 800px;
+    height: 400px;
+    top: 208px;
+}
+
+#movil {
+    width: 50px;
+    height: 50px;
+    bottom: -350px;
+    left: 0px;
+}
