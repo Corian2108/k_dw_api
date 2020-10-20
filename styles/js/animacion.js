@@ -7,13 +7,13 @@ function mover() {
     let valorY = -350
 
     function frame() {
-        if (valorX === 750) {
+        if (valorX > 750) {
             clearInterval(movimiento)
         } else {
             movil.style.left = valorX + 'px'
             movil.style.bottom = valorY + 'px'
             valorX++
-            valorY = Math.sqrt((750 * valorX) - (valorX * valorX)) - 350
+            valorY = Math.sqrt((750 * valorX) - (valorX * valorX)) - 375
         }
     }
 }
