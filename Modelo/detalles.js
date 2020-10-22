@@ -1,9 +1,10 @@
 class Detalles {
-    constructor(id_detalle, lista_platos, cantidad_platos, total) {
+    constructor(id_detalle, lista_platos, cantidad_platos, precio_platos, total) {
         this.id_detalle = id_detalle,
             //foreign key de tabla platos
             this.lista_platos = lista_platos,
             this.cantidad_platos = cantidad_platos,
+            this.precio_platos = precio_platos,
             this.total = total
     }
 
