@@ -1,18 +1,21 @@
 /*------------------Variables*/
-:root{
---grey-color:#272634;
---white-color:white;
---patillos-color:#C7B795;
---boton-color:#E98A14;
-/*------------------Fuentes*/
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
-/*------------------Sombras*/
---shodow:var(--shodow);
+
+:root {
+    --grey-color: #272634;
+    --white-color: white;
+    --patillos-color: #C7B795;
+    --boton-color: #E98A14;
+    /*------------------Fuentes*/
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+    /*------------------Sombras*/
+    --shodow: var(--shodow);
 }
+
+
 /*------------------Variables*/
 
-
-html, body{
+html,
+body {
     background-color: var(--grey-color);
     padding: 0px;
     margin: 0px;
@@ -24,72 +27,95 @@ html, body{
 
 
 /*------------------Logo Price*/
-.logo_price{
-    background-image: url("../img/Dising/Path2.png");
-    width:200px;
+
+.logo_price {
+    background-image: url("../../img/Dising/Path2.png");
+    width: 200px;
     height: 150px;
     background-size: cover;
     position: absolute;
     margin-left: 300px;
-    box-shadow: var(--shodow); 
+    box-shadow: var(--shodow);
 }
+
+
 /*------------------Logo Price*/
 
 
 /*------------------Logo Star*/
-.star{
-    background-image: url("../img/Dising/estrella.png");
-    width:50px;
-    height:50px;
-    background-size: cover;  
-    box-shadow: var(--shodow); 
+
+.star {
+    background-image: url("../../img/Dising/estrella.png");
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    box-shadow: var(--shodow);
     margin-left: 20px;
 }
+
+
 /*------------------Logo Star*/
 
 
 /*------------------Logo Order*/
-.logo_order{
-    background-image: url("../img/Dising/order.png");
-    width:70px;
-    height:48px;
-    background-size: cover;  
-    box-shadow: var(--shodow); 
+
+.logo_order {
+    background-image: url("../../img/Dising/order.png");
+    width: 70px;
+    height: 48px;
+    background-size: cover;
+    box-shadow: var(--shodow);
     margin-left: -10px;
 }
+
+
 /*------------------Logo Order*/
 
 
 /*------------------Logo Record*/
-.logo_record{
-    background-image: url("../img/Dising/estrella.png");
-    width:50px;
-    height:50px;
-    background-size: cover;  
-    box-shadow: var(--shodow); 
+
+.logo_record {
+    background-image: url("../../img/Dising/estrella.png");
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    box-shadow: var(--shodow);
     margin-left: 20px;
 }
+
+
 /*------------------Logo Record*/
 
 
 /*------------------Name_Platillo*/
-.name_saucer{
+
+.name_saucer {
     padding: 20px;
     text-align: left;
-
     color: var(--patillos-color);
-    box-shadow: var(--shodow); 
-    
+    box-shadow: var(--shodow);
 }
+
+
 /*------------------Name_Platillo*/
 
 
-c
-img{
+/*------------------Price_Platillo*/
+
+#precio {
+    position: relative;
+    top: -8px;
+    left: 90px;
+}
+
+
+/*------------------Price_Platillo*/
+
+c img {
     max-width: 100%;
 }
 
-.container-all{
+.container-all {
     position: relative;
     max-width: 550px;
     width: 100%;
@@ -97,18 +123,18 @@ img{
     overflow: hidden;
 }
 
-.slide{
+.slide {
     display: flex;
     transform: translate3d(0, 0, 0);
     transition: all 600ms;
-   /*-- animation-name: autoplay;--*/
+    /*-- animation-name: autoplay;--*/
     animation-duration: 6.5s;
     animation-direction: alternate;
     animation-fill-mode: forwards;
     animation-iteration-count: infinite;
 }
 
-.item-slide{
+.item-slide {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -117,7 +143,7 @@ img{
     max-width: 100%;
 }
 
-.pagination{
+.pagination {
     position: absolute;
     bottom: 20px;
     left: 0;
@@ -128,7 +154,7 @@ img{
     width: 100%;
 }
 
-.pagination-item{
+.pagination-item {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -144,11 +170,11 @@ img{
     transition: all 300ms;
 }
 
-.pagination-item:hover{
+.pagination-item:hover {
     transform: scale(2);
 }
 
-.pagination-item img{
+.pagination-item img {
     display: inline-block;
     max-width: none;
     height: 100%;
@@ -157,69 +183,73 @@ img{
     transition: all 300ms;
 }
 
-.pagination-item:hover img{
+.pagination-item:hover img {
     opacity: 1;
     transform: scale(1);
 }
 
-
-input[id="1"]:checked ~ .slide{
+input[id="1"]:checked~.slide {
     animation: none;
     transform: translate3d(0, 0, 0);
 }
 
-input[id="1"]:checked ~ .pagination .pagination-item[for="1"]{
+input[id="1"]:checked~.pagination .pagination-item[for="1"] {
     background: #fff;
 }
 
-input[id="2"]:checked ~ .slide{
+input[id="2"]:checked~.slide {
     animation: none;
     transform: translate3d(calc(-100% * 1), 0, 0);
 }
 
-input[id="2"]:checked ~ .pagination .pagination-item[for="2"]{
+input[id="2"]:checked~.pagination .pagination-item[for="2"] {
     background: #fff;
 }
 
-
-input[id="3"]:checked ~ .slide{
+input[id="3"]:checked~.slide {
     animation: none;
     transform: translate3d(calc(-100% * 2), 0, 0);
 }
 
-input[id="3"]:checked ~ .pagination .pagination-item[for="3"]{
+input[id="3"]:checked~.pagination .pagination-item[for="3"] {
     background: #fff;
 }
 
-
-
-@keyframes autoplay{
-    33%{
+@keyframes autoplay {
+    33% {
         transform: translate3d(calc(-100% * 0), 0, 0);
     }
-    
-    66%{
+    66% {
         transform: translate3d(calc(-100% * 1), 0, 0);
     }
-    
-    100%{
+    100% {
         transform: translate3d(calc(-100% * 2), 0, 0);
     }
 }
 
+
 /*------------------Main slide*/
+
+
+/*------------------Order Button*/
+
+#orden {
+    opacity: 0;
+    width: 70px;
+    height: 48px;
+}
+
+
+/*------------------Order Button*/
 
 
 /*------------------Historial Page------------------------*/
 
-.titulo{
+.titulo {
     color: var(--patillos-color);
     text-align: center;
-
 }
 
-.orders{
+.orders {
     display: flex;
 }
-
-

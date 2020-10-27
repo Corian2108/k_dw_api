@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/estilos.css">
-    <link rel="stylesheet" href="css/pagos.css">
+    <link rel="stylesheet" href="../estilos/css/estilos.css">
+    <link rel="stylesheet" href="../estilos/css/pagos.css">
     <title>Pedidos</title>
 </head>
+
 <body>
     <h1>Historial de Pedidos</h1>
     <div class="container_tabla">
@@ -15,15 +17,22 @@
                 <thead class="text-center">
                     <tr>
                         <th>Id</th>
-                        <th>Detalle Orden</th>
                         <th>Mesa</th>
-                        <th>Estado</th>
-                        <th>Mesero</th>
+                        <th>Detalle</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                        <th>Total</th>
+                        <th>Fecha</th>
                     </tr>
                 </thead>
+                <tbody id='cuerpo'>
+                </tbody>
             </table>
         </div>
     </div>
 
 </body>
+<script src="../main.js"></script>
+<script src="../Modelo/ordenes.js"></script>
+
 </html>

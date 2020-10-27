@@ -17,4 +17,13 @@ class Platos {
     update() {
         //actualiza la información de la base de datos
     }
+
+    checar() {
+        //Checando input 1 para prevenir bug
+        const input1 = document.getElementById('1')
+        input1.checked = true
+    }
 }
+
+var antiBug = new Platos()
+antiBug.checar()
