@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+         Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel>
+<schema name="public" protected="true" fill-color="#e1e1e1" sql-disabled="true">
+</schema>
+
+<database name="k_digital_waiterdb">
+	<role name="postgres"/>
+</database>
+
+<table name="Platos">
+	<schema name="public"/>
+	<comment><![CDATA[Tabla con información básica de los platos]]></comment>
+	<position x="5" y="221"/>
+	<column name="Id_platos" not-null="true">
+		<type name="serial"/>
+		<comment><![CDATA[Identificador de los platos]]></comment>
+	</column>
+	<column name="Nombre_Plato" not-null="true">
+		<type name="character" length="20"/>
+		<comment><![CDATA[Nombre del plato]]></comment>
+	</column>
+	<column name="Precio" not-null="true">
+		<type name="float"/>
+		<comment><![CDATA[Precio unitario de los platos]]></comment>
+	</column>
+	<column name="Cantidad">
+		<type name="integer"/>
+		<comment><![CDATA[Cantidad estimada de platos disponibles]]></comment>
+	</column>
+	<constraint name="Id_platos" type="pk-constr" factor="10" table="public.&quot;Platos&quot;">
+		<columns names="Id_platos" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="Ordenes">
+	<schema name="public"/>
+	<comment><![CDATA[Contiene información sobre las ordenes realizadas]]></comment>
+	<position x="377" y="2"/>
+	<column name="Id_Orden" not-null="true">
+		<type name="serial"/>
+		<comment><![CDATA[Identificador de la orden]]></comment>
+	</column>
+	<column name="Detalle" not-null="true">
+		<type name="integer"/>
+		<comment><![CDATA[Detalle de la orden]]></comment>
+	</column>
+	<column name="Mesa" not-null="true">
+		<type name="integer"/>
+		<comment><![CDATA[número de mesa]]></comment>
+	</column>
+	<column name="Estado" not-null="true">
+		<type name="serial" length="10"/>
+	</column>
+	<column name="Mesero" not-null="true">
+		<type name="integer"/>
+		<comment><![CDATA[mesero que atiende la orden]]></comment>
+	</column>
+	<constraint name="Id_orden" type="pk-constr" factor="10" table="public.&quot;Ordenes&quot;">
+		<columns names="Id_Orden" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="Detalle">
+	<schema name="public"/>
+	<comment><![CDATA[Detalle de la orden número de platos y cantidad de cada uno]]></comment>
+	<position x="42" y="16"/>
+	<column name="Id_detalle" not-null="true">
+		<type name="serial"/>
+		<comment><![CDATA[identificador del detalle]]></comment>
+	</column>
+	<column name="Id_plato" not-null="true">
+		<type name="integer"/>
+		<comment><![CDATA[identificador de los platos]]></comment>
+	</column>
+	<column name="cantidad" not-null="true">
+		<type name="integer"/>
+	</column>
+	<column name="total" not-null="true">
+		<type name="float"/>
+		<comment><![CDATA[Valor total de la orden]]></comment>
+	</column>
+	<constraint name="Id_detalle" type="pk-constr" factor="10" table="public.&quot;Detalle&quot;">
+		<columns names="Id_detalle" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="Mesa">
+	<schema name="public"/>
+	<comment><![CDATA[Información sobre la mesa]]></comment>
+	<position x="670" y="188"/>
+	<column name="Id_mesa" not-null="true">
+		<type name="integer"/>
+	</column>
+	<constraint name="Id_mesa" type="pk-constr" factor="10" table="public.&quot;Mesa&quot;">
+		<columns names="Id_mesa" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="Estados">
+	<schema name="public"/>
+	<comment><![CDATA[Catalogo de estados posibles para una orden]]></comment>
+	<position x="727" y="14"/>
+	<column name="Id_estado" not-null="true">
+		<type name="serial"/>
+		<comment><![CDATA[identificador del estado]]></comment>
+	</column>
+	<column name="Descripcion" not-null="true">
+		<type name="character" length="10"/>
+		<comment><![CDATA[descripción del estado]]></comment>
+	</column>
+	<constraint name="Id_estado" type="pk-constr" factor="10" table="public.&quot;Estados&quot;">
+		<columns names="Id_estado" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="Mesero">
+	<schema name="public"/>
+	<comment><![CDATA[Contiene la información de los meseros]]></comment>
+	<position x="339" y="219"/>
+	<column name="Id_mesero" not-null="true">
+		<type name="serial"/>
+		<comment><![CDATA[Identificador del mesero]]></comment>
+	</column>
+	<column name="Nombre_mesero" not-null="true">
+		<type name="character" length="15"/>
+		<comment><![CDATA[Nombre del mesero]]></comment>
+	</column>
+	<column name="Apellido" not-null="true">
+		<type name="character" length="15"/>
+		<comment><![CDATA[Apellido del mesero]]></comment>
+	</column>
+	<column name="Operario" not-null="true">
+		<type name="character" length="32"/>
+		<comment><![CDATA[Usuario para el login del mesero]]></comment>
+	</column>
+	<column name="Hash" not-null="true">
+		<type name="character" length="32"/>
+		<comment><![CDATA[Hash de la contraseña para el login]]></comment>
+	</column>
+	<constraint name="Id_mesero" type="pk-constr" factor="10" table="public.&quot;Mesero&quot;">
+		<columns names="Id_mesero" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<constraint name="mesa" type="fk-constr"	 comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.&quot;Mesa&quot;" table="public.&quot;Ordenes&quot;">
+	<columns names="Mesa" ref-type="src-columns"/>
+	<columns names="Id_mesa" ref-type="dst-columns"/>
+</constraint>
+<constraint name="Id_detalle" type="fk-constr"	 comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.&quot;Detalle&quot;" table="public.&quot;Ordenes&quot;">
+	<columns names="Detalle" ref-type="src-columns"/>
+	<columns names="Id_detalle" ref-type="dst-columns"/>
+</constraint>
+<constraint name="estado" type="fk-constr"	 comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.&quot;Estados&quot;" table="public.&quot;Ordenes&quot;">
+	<columns names="Estado" ref-type="src-columns"/>
+	<columns names="Id_estado" ref-type="dst-columns"/>
+</constraint>
+<constraint name="Mesero" type="fk-constr"	 comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.&quot;Mesero&quot;" table="public.&quot;Ordenes&quot;">
+	<columns names="Mesero" ref-type="src-columns"/>
+	<columns names="Id_mesero" ref-type="dst-columns"/>
+</constraint>
+<constraint name="Id_plato" type="fk-constr"	 comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.&quot;Platos&quot;" table="public.&quot;Detalle&quot;">
+	<columns names="Id_plato" ref-type="src-columns"/>
+	<columns names="Id_platos" ref-type="dst-columns"/>
+</constraint>
+<relationship name="&quot;rel_Ordenes_Mesa&quot;" type="relfk"
+	 src-table="public.&quot;Ordenes&quot;"
+	 dst-table="public.&quot;Mesa&quot;"
+	 src-required="true" dst-required="true"/>
+
+<relationship name="rel_Detalle_Platos" type="relfk"
+	 src-table="public.&quot;Detalle&quot;"
+	 dst-table="public.&quot;Platos&quot;"
+	 src-required="true" dst-required="true">
+	<label ref-type="src-label">
+		<position x="0" y="0"/>
+	</label>
+</relationship>
+
+<relationship name="&quot;rel_Ordenes_Detalle&quot;" type="relfk"
+	 src-table="public.&quot;Ordenes&quot;"
+	 dst-table="public.&quot;Detalle&quot;"
+	 src-required="true" dst-required="true"/>
+
+<relationship name="&quot;rel_Ordenes_Estados&quot;" type="relfk"
+	 src-table="public.&quot;Ordenes&quot;"
+	 dst-table="public.&quot;Estados&quot;"
+	 src-required="true" dst-required="true"/>
+
+<relationship name="&quot;rel_Ordenes_Mesero&quot;" type="relfk"
+	 src-table="public.&quot;Ordenes&quot;"
+	 dst-table="public.&quot;Mesero&quot;"
+	 src-required="true" dst-required="true"/>
+
+</dbmodel>
