@@ -9,8 +9,10 @@ class DishResource extends JsonResource
     public function toArray($request)
     {
         return [
+            'id' => $this->id,
             'descripcion' => $this->descripcion,
-            'precio' => $this->precio
+            'precio' => $this->precio,
+            'ruta' => $this->ruta
         ];
     }
 }

@@ -12,8 +12,9 @@ class DishFactory extends Factory
     public function definition()
     {
         return [
-            'descripcion' => $this->faker->text(50),
-            'precio' => 100 / random_int(10, 15)
+            'descripcion' => $this->faker->text(10),
+            'precio' => 100 / random_int(10, 15),
+            'ruta' => $this->faker->text(100)
         ];
     }
 }

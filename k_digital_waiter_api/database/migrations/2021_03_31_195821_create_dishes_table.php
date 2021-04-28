@@ -13,6 +13,7 @@ class CreateDishesTable extends Migration
             $table->string('descripcion');
             $table->float('precio');
             $table->timestamps();
+            $table->string('ruta');
         });
     }
 
