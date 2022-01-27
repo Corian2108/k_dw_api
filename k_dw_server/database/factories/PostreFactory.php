@@ -1,20 +1,19 @@
 <?php
 
 namespace Database\Factories;
-//conectar al modelo
-use App\Models\Model;
+
+use App\Models\Postre;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class PostreFactory extends Factory
 {
-    //conectar al modelo
-    protected $model = Model::class;
+    protected $model = Postre::class;
 
     public function definition()
     {
         return [
             //fields
-            'nombre' => $this->faker->words(3),
+            'nombre' => $this->faker->text(50),
             'descripcion' => $this->faker->text(80)
         ];
     }

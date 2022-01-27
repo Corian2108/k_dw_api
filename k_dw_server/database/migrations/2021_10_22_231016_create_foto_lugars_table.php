@@ -4,19 +4,19 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFotosPerfilTable extends Migration
+class CreateFotoLugarsTable extends Migration
 {
     public function up()
     {
-        Schema::create('fotos_perfil', function (Blueprint $table) {
-            //Primary key
+        Schema::create('foto_lugars', function (Blueprint $table) {
+            //Primary Key
             $table->id();
-            //Foreign key
-            $table->unsignedBigInteger('id_user');
+            //Foreign Key
+            $table->unsignedBigInteger('id_lugar');
             //Relations
-            $table->foreign('id_user')
+            $table->foreign('id_lugar')
                 ->references('id')
-                ->on('users')
+                ->on('lugars')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
 
@@ -26,6 +26,6 @@ class CreateFotosPerfilTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('fotos_perfil');
+        Schema::dropIfExists('foto_lugars');
     }
 }

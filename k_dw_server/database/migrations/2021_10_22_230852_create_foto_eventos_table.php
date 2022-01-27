@@ -4,11 +4,11 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFotosEventoTable extends Migration
+class CreateFotoEventosTable extends Migration
 {
     public function up()
     {
-        Schema::create('fotos_evento', function (Blueprint $table) {
+        Schema::create('foto_eventos', function (Blueprint $table) {
             //Primary Key
             $table->id();
             //Foreign Key
@@ -26,6 +26,6 @@ class CreateFotosEventoTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('fotos_evento');
+        Schema::dropIfExists('foto_eventos');
     }
 }

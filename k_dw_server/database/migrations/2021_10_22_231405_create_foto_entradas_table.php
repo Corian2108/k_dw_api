@@ -4,19 +4,19 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFotosLugarTable extends Migration
+class CreateFotoEntradasTable extends Migration
 {
     public function up()
     {
-        Schema::create('fotos_lugar', function (Blueprint $table) {
+        Schema::create('foto_entradas', function (Blueprint $table) {
             //Primary Key
             $table->id();
             //Foreign Key
-            $table->unsignedBigInteger('id_lugar');
+            $table->unsignedBigInteger('id_entrada');
             //Relations
-            $table->foreign('id_lugar')
+            $table->foreign('id_entrada')
                 ->references('id')
-                ->on('lugares')
+                ->on('entradas')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
 
@@ -26,6 +26,6 @@ class CreateFotosLugarTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('fotos_lugar');
+        Schema::dropIfExists('foto_entradas');
     }
 }

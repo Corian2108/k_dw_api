@@ -2,19 +2,18 @@
 
 namespace Database\Factories;
 
-//Conectar al modelo
-use App\Models\Model;
+use App\Models\Rol;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class RolFactory extends Factory
 {
-    //Conectar al modelo: protected $model = Rol::class;
-    protected $model = Model::class;
+    protected $model = Rol::class;
 
     public function definition()
     {
         return [
-            'nombre_rol' => $this->faker->unique()->randomElement(array('cliente', 'chef')),
+            'nombre_rol' => $this->faker->unique()
+                ->randomElement(array('cliente', 'chef')),
         ];
     }
 }

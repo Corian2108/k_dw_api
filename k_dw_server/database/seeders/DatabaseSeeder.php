@@ -3,13 +3,28 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-//conectar con modelos: use \App\Models\User
+use \App\Models\Rol;
+use \App\Models\User;
+use \App\Models\Foto_perfil;
+use \App\Models\Evento;
+use \App\Models\Reservacion;
+use \App\Models\Foto_evento;
+use \App\Models\Lugar;
+use \App\Models\Foto_lugar;
+use \App\Models\Bebida;
+use \App\Models\Postre;
+use \App\Models\Fuerte;
+use \App\Models\Entrada;
+use \App\Models\Foto_entrada;
+use \App\Models\Foto_postre;
+use \App\Models\Foto_fuerte;
+use \App\Models\Menu;
 
 class DatabaseSeeder extends Seeder
 {
     public function run()
     {
-        /* 
+        
         Rol::factory(2)->create();
         User::factory(10)->create();
         Foto_perfil::factory(10)->create();
@@ -26,6 +41,6 @@ class DatabaseSeeder extends Seeder
         Foto_postre::factory(3)->create();
         Foto_fuerte::factory(3)->create();
         Menu::factory(3)->create();
-        */
+       
     }
 }

@@ -8,7 +8,7 @@ class CreateEntradasTable extends Migration
 {
     public function up()
     {
-        Schema::create('entrada', function (Blueprint $table) {
+        Schema::create('entradas', function (Blueprint $table) {
             //Primary Key
             $table->id();
             //Fields

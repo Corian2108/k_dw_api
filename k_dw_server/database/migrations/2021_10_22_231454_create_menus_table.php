@@ -21,6 +21,32 @@ class CreateMenusTable extends Migration
             $table->string('nombre', 100);
             $table->string('descripcion', 500);
             $table->timestamps();
+            //Relations
+            $table->foreign('id_evento')
+            ->references('id')
+            ->on('eventos')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->foreign('id_entrada')
+            ->references('id')
+            ->on('entradas')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->foreign('id_fuerte')
+            ->references('id')
+            ->on('fuertes')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->foreign('id_postre')
+            ->references('id')
+            ->on('postres')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->foreign('id_bebida')
+            ->references('id')
+            ->on('bebidas')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
         });
     }
 

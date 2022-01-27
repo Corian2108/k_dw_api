@@ -4,19 +4,19 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFotosFuerteTable extends Migration
+class CreateFotoPerfilsTable extends Migration
 {
     public function up()
     {
-        Schema::create('fotos_fuerte', function (Blueprint $table) {
-            //Primary Key
+        Schema::create('foto_perfils', function (Blueprint $table) {
+            //Primary key
             $table->id();
-            //Foreign Key
-            $table->unsignedBigInteger('id_fuerte');
+            //Foreign key
+            $table->unsignedBigInteger('id_user');
             //Relations
-            $table->foreign('id_fuerte')
+            $table->foreign('id_user')
                 ->references('id')
-                ->on('fuertes')
+                ->on('users')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
 
@@ -26,6 +26,6 @@ class CreateFotosFuerteTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('fotos_fuerte');
+        Schema::dropIfExists('foto_perfils');
     }
 }

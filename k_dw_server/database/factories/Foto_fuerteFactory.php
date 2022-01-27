@@ -1,20 +1,20 @@
 <?php
 
 namespace Database\Factories;
-//conectar a modelo
-use App\Models\Model;
+
+use App\Models\Foto_fuerte;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class Foto_fuerteFactory extends Factory
 {
-    //conectar a modelo
-    protected $model = Model::class;
+
+    protected $model = Foto_fuerte::class;
 
     public function definition()
     {
         return [
             //foreign key
-            'id_fuerte' => $this->faker->random_int(1, 3)
+            'id_fuerte' => $this->faker->numberBetween(1, 3)
         ];
     }
 }

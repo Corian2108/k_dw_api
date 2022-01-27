@@ -23,8 +23,8 @@ class CreateUsersTable extends Migration
             $table->timestamps();
             //Relations
             $table->foreign('id_rol')
-                ->references('id')
-                ->on('roles')
+            ->references('id')
+            ->on('rols')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
         });

@@ -4,11 +4,11 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFotosPostreTable extends Migration
+class CreateFotoPostresTable extends Migration
 {
     public function up()
     {
-        Schema::create('fotos_postre', function (Blueprint $table) {
+        Schema::create('foto_postres', function (Blueprint $table) {
             //Primary Key
             $table->id();
             //Foreig Key
@@ -26,6 +26,6 @@ class CreateFotosPostreTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('fotos_postre');
+        Schema::dropIfExists('foto_postres');
     }
 }

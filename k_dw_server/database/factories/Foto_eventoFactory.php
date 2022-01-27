@@ -1,20 +1,20 @@
 <?php
 
 namespace Database\Factories;
-//conectar al modelo
-use App\Models\Model;
+
+use App\Models\Foto_evento;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class Foto_eventoFactory extends Factory
 {
-    //conectar al modelo
-    protected $model = Model::class;
+
+    protected $model = Foto_evento::class;
 
     public function definition()
     {
         return [
             //foreign key
-            'id_evento' => $this->faker->random_int(1, 3)
+            'id_evento' => $this->faker->numberBetween(1, 3)
         ];
     }
 }

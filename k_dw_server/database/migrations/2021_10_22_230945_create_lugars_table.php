@@ -4,11 +4,11 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLugaresTable extends Migration
+class CreateLugarsTable extends Migration
 {
     public function up()
     {
-        Schema::create('lugares', function (Blueprint $table) {
+        Schema::create('lugars', function (Blueprint $table) {
             //Primary Key
             $table->id();
             //Foreign Key
@@ -28,6 +28,6 @@ class CreateLugaresTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('lugares');
+        Schema::dropIfExists('lugars');
     }
 }
