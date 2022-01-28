@@ -14,7 +14,8 @@ class EventoFactory extends Factory
     {
         return [
             //Foreign Key
-            'id_users' => $this->faker->numberBetween(8, 10),
+            'id_user' => $this->faker->numberBetween(8, 10),
+            'id_lugar' => $this->faker->numberBetween(1, 3),
             //Fields
             'nombre' => $this->faker->name(),
             'descripcion' => $this->faker->text(100),

@@ -11,15 +11,8 @@ class CreateFotoPerfilsTable extends Migration
         Schema::create('foto_perfils', function (Blueprint $table) {
             //Primary key
             $table->id();
-            //Foreign key
-            $table->unsignedBigInteger('id_user');
-            //Relations
-            $table->foreign('id_user')
-                ->references('id')
-                ->on('users')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
-
+            //Fields
+            $table->string('ruta', 150);
             $table->timestamps();
         });
     }

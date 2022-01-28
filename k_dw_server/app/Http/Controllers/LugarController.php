@@ -19,6 +19,8 @@ class LugarController extends Controller
         $item = new Lugar();
         $item->nombre = $request->nombre;
         $item->ubicacion = $request->ubicacion;
+        $item->zona = $request->zona;
+        $item->id_foto = $request->id_foto;
 
         if ($item->save()) {
             return new LugarResource($item);
@@ -42,6 +44,8 @@ class LugarController extends Controller
         $item = Lugar::findOrFail($id);
         $item->nombre = $request->nombre;
         $item->ubicacion = $request->ubicacion;
+        $item->zona = $request->zona;
+        $item->id_foto = $request->id_foto;
 
         if ($item->save()) {
             return new LugarResource($item);

@@ -17,8 +17,7 @@ class Foto_perfilController extends Controller
     public function store(Request $request)
     {
         $item = new Foto_perfil();
-        $item->nombre = $request->nombre;
-        //migrations
+        $item->ruta = $request->ruta;
 
         if ($item->save()) {
             return new FotoPerfilResource($item);
@@ -40,7 +39,7 @@ class Foto_perfilController extends Controller
     public function update(Request $request, $id)
     {
         $item = Foto_perfil::findOrFail($id);
-        $item->nombre = $request->nombre;
+        $item->ruta = $request->ruta;
 
         if ($item->save()) {
             return new FotoPerfilResource($item);

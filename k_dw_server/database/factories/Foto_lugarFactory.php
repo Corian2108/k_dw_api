@@ -12,8 +12,9 @@ class Foto_lugarFactory extends Factory
     public function definition()
     {
         return [
-            //foreign key
-            'id_lugar' => $this->faker->numberBetween(1, 3)
+            //fields
+            'ruta' => $this->faker->text(100)
+            
         ];
     }
 }

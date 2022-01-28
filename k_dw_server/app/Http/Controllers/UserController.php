@@ -19,10 +19,11 @@ class UserController extends Controller
     {
         $item = new User();
         $item->id_rol = $request->id_rol;
+        $item->id_foto_perfils = $request->id_foto_perfils;
         $item->nombre = $request->nombre;
         $item->email = $request->email;
         $item->clave = $request->clave;
-        $item->calificacion = $request->calificacion;
+        $item->descripcion = $request->descripcion;
 
         if ($item->save()) {
             return new UserResource($item);
@@ -45,10 +46,11 @@ class UserController extends Controller
     {
         $item = User::findOrFail($id);
         $item->id_rol = $request->id_rol;
+        $item->id_foto_perfils = $request->id_foto_perfils;
         $item->nombre = $request->nombre;
         $item->email = $request->email;
         $item->clave = $request->clave;
-        $item->calificacion = $request->calificacion;
+        $item->descripcion = $request->descripcion;
 
         if ($item->save()) {
             return new UserResource($item);

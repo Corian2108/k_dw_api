@@ -14,19 +14,9 @@ class Evento extends Model
         return $this->hasOne(User::class);
     }
 
-    public function Menu()
-    {
-        return $this->hasOne(Menu::class);
-    }
-
     public function Lugar()
     {
         return $this->hasOne(Lugar::class);
-    }
-
-    public function FotoEvento()
-    {
-        return $this->hasOne(Foto_evento::class);
     }
 
     public function Reservacion()

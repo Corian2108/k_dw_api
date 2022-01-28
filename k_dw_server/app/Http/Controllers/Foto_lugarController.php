@@ -17,7 +17,7 @@ class Foto_lugarController extends Controller
     public function store(Request $request)
     {
         $item = new Foto_lugar();
-        $item->nombre = $request->nombre;
+        $item->ruta = $request->ruta;
         //migrations
 
         if ($item->save()) {
@@ -40,7 +40,7 @@ class Foto_lugarController extends Controller
     public function update(Request $request, $id)
     {
         $item = Foto_lugar::findOrFail($id);
-        $item->nombre = $request->nombre;
+        $item->ruta = $request->ruta;
 
         if ($item->save()) {
             return new FotoLugarResource($item);

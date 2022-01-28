@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Evento;
-use App\Http\Resources\EntradaResource;
 use App\Http\Resources\EventoResource;
 
 class EventoController extends Controller
@@ -24,6 +23,8 @@ class EventoController extends Controller
         $evento->hora = $request->hora;
         $evento->precio = $request->precio;
         $evento->aforo = $request->aforo;
+        $evento->id_user = $request->id_user;
+        $evento->id_lugar = $request->id_lugar;
 
         if ($evento->save()) {
             return new EventoResource($evento);
@@ -46,6 +47,13 @@ class EventoController extends Controller
     {
         $evento = Evento::findOrFail($id);
         $evento->nombre = $request->nombre;
+        $evento->descripcion = $request->descripcion;
+        $evento->fecha = $request->fecha;
+        $evento->hora = $request->hora;
+        $evento->precio = $request->precio;
+        $evento->aforo = $request->aforo;
+        $evento->id_user = $request->id_user;
+        $evento->id_lugar = $request->id_lugar;
 
         if ($evento->save()) {
             return new EventoResource($evento);

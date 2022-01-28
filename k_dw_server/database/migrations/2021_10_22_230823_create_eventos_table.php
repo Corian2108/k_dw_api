@@ -12,7 +12,8 @@ class CreateEventosTable extends Migration
             //Primary Key
             $table->id();
             //Foreign Key
-            $table->unsignedBigInteger('id_users');
+            $table->unsignedBigInteger('id_user');
+            $table->unsignedBigInteger('id_lugar');
             //Fields
             $table->string('nombre', 100);
             $table->string('descripcion', 500);
@@ -22,9 +23,14 @@ class CreateEventosTable extends Migration
             $table->integer('aforo');
             $table->timestamps();
             //Relations
-            $table->foreign('id_users')
+            $table->foreign('id_user')
                 ->references('id')
                 ->on('users')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->foreign('id_lugar')
+            ->references('id')
+            ->on('lugars')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
         });

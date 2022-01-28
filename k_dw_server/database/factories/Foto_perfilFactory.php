@@ -13,7 +13,7 @@ class Foto_perfilFactory extends Factory
     public function definition()
     {
         return [
-            'id_user' => $this->faker->unique()->numberBetween(1, 10)
+            'ruta' => $this->faker->text(100)
         ];
     }
 }

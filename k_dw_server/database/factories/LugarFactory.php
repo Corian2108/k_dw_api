@@ -14,10 +14,11 @@ class LugarFactory extends Factory
     {
         return [
             //foreign key
-            'id_evento' => $this->faker->numberBetween(1, 3),
+            'id_foto' => $this->faker->numberBetween(1, 3),
             //fields
             'nombre' => $this->faker->text(50),
-            'ubicacion' => $this->faker->text(60)
+            'ubicacion' => $this->faker->text(60),
+            'zona' => $this->faker->city(60)
         ];
     }
 }

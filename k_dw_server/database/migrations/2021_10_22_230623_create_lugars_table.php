@@ -12,15 +12,16 @@ class CreateLugarsTable extends Migration
             //Primary Key
             $table->id();
             //Foreign Key
-            $table->unsignedBigInteger('id_evento');
+            $table->unsignedBigInteger('id_foto');
             //Fields
             $table->string('nombre', 100);
             $table->string('ubicacion', 150);
+            $table->string('zona', 150);
             $table->timestamps();
             //Relations
-            $table->foreign('id_evento')
+            $table->foreign('id_foto')
                 ->references('id')
-                ->on('eventos')
+                ->on('foto_lugars')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
         });
