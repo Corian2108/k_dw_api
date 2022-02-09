@@ -7,22 +7,23 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Tymon\JWTAuth\Contracts\JwtSubject;
 
-class User extends Authenticatable
+class User extends Authenticatable implements JwtSubject
 {
     use HasApiTokens, HasFactory, Notifiable;
 
     protected $fillable = [
-        'name',
+        'nombre',
         'email',
-        'clave',
+        'password',
         'descripcion',
         'id_rol',
         'id_foto_perfils',
     ];
 
     protected $hidden = [
-        'clave',
+        'password',
         'remember_token',
     ];
 
@@ -48,5 +49,15 @@ class User extends Authenticatable
     public function Reservacion()
     {
         return $this->belongsTo(Reservacion::class);
+    }
+
+    public function getJWtIdentifier()
+    {
+        return $this->getKey();
+    }
+
+    public function getJWTCustomClaims()
+    {
+        return [];
     }
 }

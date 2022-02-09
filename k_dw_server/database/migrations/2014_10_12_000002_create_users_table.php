@@ -13,12 +13,12 @@ class CreateUsersTable extends Migration
             $table->id();
             //Foreign Keys
             $table->unsignedBigInteger('id_rol');
-            $table->unsignedBigInteger('id_foto_perfils');
+            $table->unsignedBigInteger('id_foto_perfils')->nullable();
             //Fields
             $table->string('nombre', 100);
             $table->string('email', 100)->unique();
-            $table->string('clave', 16);
-            $table->string('descripcion', 200);
+            $table->string('password', 200);
+            $table->string('descripcion', 200)->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
