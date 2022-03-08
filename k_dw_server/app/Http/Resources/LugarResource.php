@@ -9,7 +9,7 @@ class LugarResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id_foto' => $this->id_foto,
+            'id' => $this->id,
             'nombre' => $this->nombre,
             'ubicacion' => $this->ubicacion,
             'zona' => $this->zona

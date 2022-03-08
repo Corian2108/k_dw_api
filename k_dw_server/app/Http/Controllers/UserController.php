@@ -75,21 +75,6 @@ class UserController extends Controller
         return $item;
     }
 
-    /* public function store(Request $request)
-    {
-        $item = new User();
-        $item->id_rol = $request->id_rol;
-        $item->id_foto_perfils = $request->id_foto_perfils;
-        $item->nombre = $request->nombre;
-        $item->email = $request->email;
-        $item->password = $request->password;
-        $item->descripcion = $request->descripcion;
-
-        if ($item->save()) {
-            return new UserResource($item);
-        }
-    } */
-
     public function show($id)
     {
         $item = User::findOrFail($id);

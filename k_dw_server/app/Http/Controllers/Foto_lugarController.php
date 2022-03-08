@@ -18,7 +18,6 @@ class Foto_lugarController extends Controller
     {
         $item = new Foto_lugar();
         $item->ruta = $request->ruta;
-        //migrations
 
         if ($item->save()) {
             return new FotoLugarResource($item);
